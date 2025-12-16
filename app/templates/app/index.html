@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>📝 Task Manager</h1>
+
+        <form class="task-form" method="POST">
+            {% csrf_token %}
+            <input type="text" name="taskname" placeholder="Enter new task..." required />
+            <button type="submit">Add</button>
+        </form>
+
+        <ul class="task-list">
+                {% for task in tasks %}
+                    <li class="task-item">
+                        <span class="task-text">{{task.taskname}}</span>
+
+                        <div class="task-buttons">
+
+                            <form method= "GET" action="/update/{{ task.id }}/">
+                                {% csrf_token %}
+                                <button class="edit-btn">✏️</button>
+                            </form>
+
+                            <form method="POST" action="/delete/{{ task.id }}/">
+                                {% csrf_token %}
+                                <button class="delete-btn">✖</button>
+                            </form>
+                        </div>
+
+                    </li>
+                {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>

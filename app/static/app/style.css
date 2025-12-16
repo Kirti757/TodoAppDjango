@@ -1,0 +1,194 @@
+/* 🌟 GLOBAL PAGE STYLING 🌟 */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #dae5f4;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 420px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* MAIN PAGE TITLE */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* FORM */
+.task-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.task-form input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.25s ease;
+}
+
+.task-form input:focus {
+    border-color: #0066ff;
+    box-shadow: 0px 0px 6px rgba(0, 102, 255, 0.3);
+    outline: none;
+}
+
+.task-form button {
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #00cc66, #00aa55);
+    color: white;
+    border: none;
+    margin-left: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.task-form button:hover {
+    background: linear-gradient(90deg, #00994d, #008844);
+    transform: scale(1.03);
+}
+
+
+/* TASK LIST */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    background: #f8f9ff;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border-left: 5px solid #0066ff;
+}
+
+/* BUTTON AREA */
+.task-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* EDIT + DELETE BUTTONS */
+.edit-btn, .delete-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.edit-btn {
+    color: #ff4d00;
+}
+
+.delete-btn {
+    color: #f4680a;
+}
+
+.edit-btn:hover {
+    color: #e6870a;
+    transform: scale(1.1);
+}
+
+.delete-btn:hover {
+    color: #cc0000;
+    transform: scale(1.1);
+}
+
+
+
+/* 🌟🌟 UPDATED EDIT PAGE (DYNAMIC) 🌟🌟 */
+
+/* EDIT PAGE CONTAINER */
+.update-container {
+    width: 420px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.15);
+    margin-top: 50px;
+
+    animation: slideDown 0.4s ease-out;
+}
+
+/* ANIMATION */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* EDIT PAGE TITLE */
+.update-title {
+    text-align: center;
+    color: #333;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* INPUT STYLING */
+.update-form input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    transition: 0.25s ease;
+}
+
+.update-form input:focus {
+    border-color: #0066ff;
+    box-shadow: 0 0 6px rgba(0, 102, 255, 0.3);
+    outline: none;
+}
+
+/* UPDATE BUTTON */
+.update-form button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #00cc66, #00aa55);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: 0.25s ease;
+}
+
+.update-form button:hover {
+    background: linear-gradient(90deg, #00994d, #008844);
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .container, .update-container {
+        width: 90%;
+        padding: 20px;
+    }
+}

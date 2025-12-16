@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+</head>
+<body>
+
+<div class="update-container">
+    <h2 class="update-title">✏️ Edit Task</h2>
+
+    <form method="POST" class="update-form">
+        {% csrf_token %}
+        <input type="text" name="taskname" value="{{ task.taskname }}" required>
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+</body>
+</html>
